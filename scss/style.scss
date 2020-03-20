@@ -1,0 +1,168 @@
+$primary-color: #df3500;
+$light-grey: #727272;
+$extra-light-grey: #eee;
+
+* {
+  background-color: #fff;
+  border: 0;
+  box-sizing: border-box;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-display: swap;
+  src: local(Nunito Regular),
+       local(Nunito-Regular),
+       url(https://fonts.gstatic.com/s/nunito/v12/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');
+  unicode-range: U+00-FF;
+}
+
+html {
+  font-family: 'Nunito', sans-serif;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: $primary-color;
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+
+header {
+  align-items: center;
+  border-bottom: 2px solid $extra-light-grey;
+  color: $primary-color;
+  display: flex;
+  font-weight: 900;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  &>*:first-of-type {
+    margin-left: calc((100% - 900px)/2);
+    padding-left: 1rem;
+  }
+
+  &>*:last-of-type {
+    margin-right: calc((100% - 900px)/2);
+    padding-right: 1rem;
+  }
+}
+
+.brand {
+  font-size: 200%;
+  text-decoration: none;
+}
+
+nav {
+  ul {
+    display: flex;
+    list-style: none;
+    
+    li {
+      a {
+        display: flex;
+        padding: 1em;
+        font-size: 1rem;
+        transition: .35s;
+        text-decoration: none;
+        border: 2px solid transparent;
+
+        &[aria-current="page"] {
+          color: $primary-color;
+          border-bottom: 2px solid;
+        }
+
+        &:hover:not([aria-current="page"]) {
+          color: $light-grey;
+        }
+      }
+    }
+  }
+}
+
+/* Content */
+
+#welcome {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: .5rem;
+}
+
+.subtitle {
+  font-size: larger;
+  color: $light-grey;
+}
+
+.main_container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  &>:not(:last-child) {
+    margin-bottom: .5rem;
+  }
+
+  &>:not(:first-child) {
+    margin-top: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+
+    span {
+      color: $light-grey;
+      margin-right: 5px;
+    }
+  }
+}
+
+img {
+  border-radius: .5rem;
+  width: 100%;
+  height: 100%;
+  border: 1px solid $extra-light-grey;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.25);
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+
+footer {
+  margin-top: 3rem;
+  border-top: 2px solid $extra-light-grey;
+  padding: 35px 0;
+  text-align: center;
+}
+
+/* Media queries*/
+
+@media (prefers-color-scheme: dark) {
+  *{
+    background-color: #222;
+    color: #fff;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  header > *:first-of-type,
+  header > *:last-of-type {
+    margin: 0;
+  }
+}

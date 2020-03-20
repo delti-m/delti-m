@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<meta charset="utf-8">
+<!-- Make the webpage responsive -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff">
+<!--
+Options:
+  - default (white bg and black text)
+  - black (both bg and text)
+  - black-translucent (custom bg and white text)
+-->
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<!-- Max 150 chars. May be used by search engines -->
+<meta name="description" content="Website used for my personal experiments.">
+<link rel="stylesheet" href="css/style.css">
+<!-- Web app manifest -->
+<link rel="manifest" href="manifest.webmanifest">
+<!-- Icon(s) (favicon.ico in the root) -->
+<link
+  rel="icon"
+  sizes="16x16 32x32 48x48 96x96 144x144 192x192 256x256 512x512"
+  type="image/x-icon"
+  href="favicon.ico"
+>
+<link rel="apple-touch-icon" href="icons/icon192.png">
+<link rel="mask-icon" href="icons/mask-icon.svg" color="#fff">
+<title>Delton</title>
+
+<header>
+  <a class="brand" href="index.html">Delton</a>
+  <nav>
+    <ul>
+      <li><a href="#home" aria-current="page">Home</a>
+      <li><a href="#contact">Contatti</a>
+      <li><a href="#about">Info</a>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section id="welcome">
+    <h1>Benvenuti nel mio sito!</h1>
+    <p class="subtitle">Dal 2020</p>
+  </section>
+  <section class="main_container">
+    <picture>
+      <source srcset="negozio.webp" type="image/webp">
+      <img src="negozio.jpg" alt="Negozio">
+    </picture>
+    <article id="chi_shiamo">
+      <h2>
+        <a href="#chi_shiamo">
+          <span>#</span>
+        </a>
+        Chi siamo?
+      </h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat laboriosam odit, doloribus ex quibusdam a consequuntur praesentium quae, consequatur repudiandae harum. Voluptatum ipsa, repellat officiis eos repellendus ut praesentium at.</p>
+    </article>
+    <article id="dove_siamo">
+      <h2>
+        <a href="#dove_siamo">
+          <span>#</span>
+        </a>
+        Dove siamo?
+      </h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti libero et, soluta rem minima similique maxime error qui labore voluptatem quae sapiente itaque sit, eos animi repellat dolore, vitae consequuntur.</p>
+    </article>
+    <article id="da_dove_veniamo">
+      <h2>
+        <a href="#da_dove_veniamo">
+          <span>#</span>
+        </a>
+        Da dove veniamo?
+      </h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum dolores reprehenderit placeat modi, necessitatibus nemo possimus! Nobis officiis praesentium aliquid at tempora veritatis veniam, deserunt repellat totam inventore, iusto laborum!</p>
+    </article>
+  </section>
+</main>
+<footer>Delton © 2020</footer>
+<script src="script.js" defer></script>
+<!-- Comment to understand git -->
