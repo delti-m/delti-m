@@ -1,5 +1,3 @@
-$primary-color: #df3500;
-$light-grey: #727272;
 $extra-light-grey: #eee;
 
 * {
@@ -15,7 +13,6 @@ $extra-light-grey: #eee;
   font-family: 'Nunito';
   font-display: swap;
   src: local(Nunito Regular),
-       local(Nunito-Regular),
        url(https://fonts.gstatic.com/s/nunito/v12/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');
   unicode-range: U+00-FF;
 }
@@ -26,39 +23,37 @@ html {
 }
 
 ::selection {
-  background-color: $primary-color;
+  background-color: #df3500;
   color: #fff;
 }
 
-.container {
-  width: 100%;
+/* I use this instead of a variable beacause it's easier for the dark theme */
+nav ul li a:hover:not([aria-current="page"]),
+.subtitle,
+#main_content a span {
+  color: #727272;
+}
+
+.wrapper {
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Header */
-
 header {
-  align-items: center;
   border-bottom: 2px solid $extra-light-grey;
-  color: $primary-color;
-  display: flex;
   font-weight: 900;
-  justify-content: space-between;
   position: sticky;
   top: 0;
-  width: 100%;
   z-index: 1;
+}
 
-  &>*:first-of-type {
-    margin-left: calc((100% - 900px)/2);
-    padding-left: 1rem;
-  }
-
-  &>*:last-of-type {
-    margin-right: calc((100% - 900px)/2);
-    padding-right: 1rem;
-  }
+#header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 0 1rem;
 }
 
 .brand {
@@ -66,34 +61,24 @@ header {
   text-decoration: none;
 }
 
-nav {
-  ul {
+nav ul {
+  display: flex;
+  list-style: none;
+  
+  li a {
     display: flex;
-    list-style: none;
-    
-    li {
-      a {
-        display: flex;
-        padding: 1em;
-        font-size: 1rem;
-        transition: .35s;
-        text-decoration: none;
-        border: 2px solid transparent;
+    padding: 1em;
+    font-size: 1rem;
+    transition: .35s;
+    text-decoration: none;
+    border: 2px solid transparent;
 
-        &[aria-current="page"] {
-          color: $primary-color;
-          border-bottom: 2px solid;
-        }
-
-        &:hover:not([aria-current="page"]) {
-          color: $light-grey;
-        }
-      }
+    &[aria-current="page"] {
+      color: #df3500;
+      border-bottom: 2px solid;
     }
   }
 }
-
-/* Content */
 
 #welcome {
   text-align: center;
@@ -107,13 +92,10 @@ h1 {
 
 .subtitle {
   font-size: larger;
-  color: $light-grey;
 }
 
-.main_container {
+#main_content {
   max-width: 700px;
-  margin: 0 auto;
-  padding: 0 1rem;
 
   &>:not(:last-child) {
     margin-bottom: .5rem;
@@ -123,11 +105,11 @@ h1 {
     margin-top: 1rem;
   }
 
+  /* Style the # anchor left to the h2s */
   a {
     text-decoration: none;
 
     span {
-      color: $light-grey;
       margin-right: 5px;
     }
   }
@@ -142,8 +124,6 @@ img {
   margin-bottom: 2rem;
 }
 
-/* Footer */
-
 footer {
   margin-top: 3rem;
   border-top: 2px solid $extra-light-grey;
@@ -151,18 +131,21 @@ footer {
   text-align: center;
 }
 
-/* Media queries*/
-
+/* Dark theme */
 @media (prefers-color-scheme: dark) {
-  *{
+  * {
     background-color: #222;
     color: #fff;
   }
-}
 
-@media only screen and (max-width: 900px) {
-  header > *:first-of-type,
-  header > *:last-of-type {
-    margin: 0;
+  nav ul li a[aria-current=page] {
+    color: #F52;
+  }
+
+  /* Same as before */
+  nav ul li a:hover:not([aria-current="page"]),
+  .subtitle,
+  #main_content a span {
+    color: #a0a0a0;
   }
 }
