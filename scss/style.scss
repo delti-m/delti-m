@@ -136,10 +136,14 @@ img {
   margin-bottom: 2rem;
 }
 
+svg path {
+  fill: #222;
+}
+
 footer {
   margin-top: 3rem;
   border-top: 2px solid $extra-light-grey;
-  padding: 35px 0;
+  padding-top: 35px;
   text-align: center;
 }
 
@@ -159,5 +163,9 @@ footer {
   .subtitle,
   #main_content a span {
     color: #a0a0a0;
+  }
+
+  svg path {
+    fill: #fff;
   }
 }
